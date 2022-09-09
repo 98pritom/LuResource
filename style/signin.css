@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Manrope&family=Poppins:wght@400;700&display=swap"); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--sec-text-color);
+  /* font-weight: 700; */
+}
+
+:root{
+    --prim-color: #004643;
+    --sec-color: #FF8036;
+    --thrd-color: #1785D4;
+    --text-color:rgb(58, 58, 58);
+    --sec-text-color:#fff;
+}
+
+a:hover{
+    color: var(--sec-text-color-color);
+}
+#hr1{
+    margin-top: 70px;
+    margin-bottom: 35px;
+    border: 0;
+    height: 1px;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: var(--prim-color);
+  }
+  h1{
+    font-size: 3.438;
+    color: var(--sec-text-color);
+  }
+  .fw4 {
+    font-weight: 400;
+  }
+  .fw5 {
+    font-weight: 500;
+  }
+  .fw6 {
+    font-weight: 600;
+  }
+
+  /* Navbar style */
+  .change-color{
+    color: var(--sec-color);
+    text-decoration: none;
+  }
+  .nav-design{
+    border-radius: 5px;
+    margin-top: 2.5rem;
+  }
+  /* Navbar style */
+
+  /* Login section */
+  .parent-div{
+    margin-top: 7.138rem;
+    display: flex;
+  }
+  .img-design{
+    width: 515px;
+    border-radius: 10px;
+  }
+  /* .img-div{
+
+  } */
+  .form-div{
+    margin-left: 106px;
+    width: 484px;
+    padding: 45px;
+  }
+  .txt_field{
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0;
+    color: var(--sec-text-color);
+  }
+  ::placeholder { 
+    color: var(--sec-text-color);
+ }
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .btn-design{
+    color: var(--sec-text-color);
+    background-color: var(--thrd-color);
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 5px 30px;
+  }
+ /* Login section */
+
+ /* Footer section */
+ .footer-content{
+    width: 400px;
+ }
+ .footer-nav{
+    width: 400px;
+    align-items: center;
+ }
