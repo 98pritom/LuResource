@@ -1,6 +1,7 @@
 <?php
 require('config.php');
 
+
 if(isset($_SESSION['isUserLoggedIn'])){
     echo "<script>window.location.href='home.php ? user_already_loggedin';</script>";
 }
@@ -75,7 +76,7 @@ if (isset($_POST['signup'])) {
                 <div class="form-div">
                     <h1>Create Account</h1>
                     <p class="fw4">Fill in the details below to create an account</p>
-                    <form id="form" method="post">
+                    <form id="form" method="post" enctype="multipart/form-data">
                         <div class="mb-3 txt_field">
                             <input type="text" id="name" name="fullName" placeholder="Name">
                         </div>
@@ -83,10 +84,17 @@ if (isset($_POST['signup'])) {
                             <input type="email" id="email" name="emailId" placeholder="Email">
                         </div>
                         <div class="mb-3 txt_field">
+                            <input type="text" id="email" name="department" placeholder="Email">
+                        </div>
+                        <div class="mb-3 txt_field">
                             <input type="text" id="npass" name="password" placeholder="Password">
                         </div>
                         <div class="mb-3 txt_field">
                             <input type="text" id="cpass" name="cpass" placeholder="Confirm Password">
+                        </div>
+                        <div class="mb-3 ">
+                            <input class="form-control" type="file" id="image" name="image" placeholder="image">
+                            <img src="" alt="">
                         </div>
                         <button type="submit" name="signup" class="btn-design">Sign Up</button><br>
                         <p class="d-inline">Already have an account?</p><a class="change-color" href="signin.php"> Sign In</a>

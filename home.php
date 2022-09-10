@@ -1,5 +1,6 @@
 <?php
 require('config.php');
+
 if(!isset($_SESSION['isUserLoggedIn'])){
     echo "<script>window.location.href='signin.php ? user_not_loggedin';</script>";
 }
@@ -21,7 +22,9 @@ if($_SESSION['role']!='teacher'){
 <body>
     <h1>Teacher Home</h1>
     <h2><?=$_SESSION['emailId']?></h2>
+    <h2><a href="profile.php">Profile</a></h2>
     <h2><a href="signout.php">Sign Out</a></h2>
+    
 </body>
 
 </html>
