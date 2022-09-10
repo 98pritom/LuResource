@@ -89,10 +89,10 @@ if ($_SESSION['role'] != 'teacher') {
                             </div>
                             <div class='row'>
                                 <div class='col-md-3'>
-                                    <p>City</p>
+                                    <p>Department</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>Sylhet</h5>
+                                    <h5>$row[department]</h5>
                                 </div>
                             </div>
                             <div class='row'>
@@ -116,7 +116,7 @@ if ($_SESSION['role'] != 'teacher') {
                                     <p>Phone</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>+8801234873345</h5>
+                                    <h5>$row[mbl_num]</h5>
                                 </div>
                             </div>
                         </div>

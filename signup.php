@@ -16,7 +16,7 @@ if (isset($_POST['signup'])) {
         echo "<script>window.location.href='signup.php ? user_already_exist'</script>";
     } else {
         $password = crypt($_POST['password'],"LuResource");
-        $query = "INSERT INTO `users`(`full_name`, `email_id`, `password`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','$password','teacher')";
+        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password','teacher')";
         $run = mysqli_query($conn, $query);
 
         if ($run) {
@@ -84,7 +84,10 @@ if (isset($_POST['signup'])) {
                             <input type="email" id="email" name="emailId" placeholder="Email">
                         </div>
                         <div class="mb-3 txt_field">
-                            <input type="text" id="email" name="department" placeholder="Email">
+                            <input type="text" id="department" name="department" placeholder="Department">
+                        </div>
+                        <div class="mb-3 txt_field">
+                            <input type="number" id="number" name="mblNumber" placeholder="Mobile Number">
                         </div>
                         <div class="mb-3 txt_field">
                             <input type="text" id="npass" name="password" placeholder="Password">
