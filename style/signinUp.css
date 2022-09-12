@@ -109,10 +109,23 @@ a:hover{
  /* Login section */
 
  /* Footer section */
- .footer-content{
+ /* .footer-content{
     width: 400px;
  }
  .footer-nav{
     width: 400px;
     align-items: center;
- }
+ } */
+ .foo a{
+  text-decoration: none;
+  color: rgb(223, 221, 221);
+}
+.foo{
+
+  padding: 40px ;
+  background-color: #034746;
+  color: rgb(223, 221, 221);
+}
+.foo a:hover {
+color: rgb(182, 179, 179);
+}

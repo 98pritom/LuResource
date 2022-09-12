@@ -34,12 +34,15 @@ if (isset($_POST['signin'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>SignIn</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style/signin.css">
+    <link rel="stylesheet" href="style/signinUp.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
+        <?php
+        include 'navBarOut.php';
+        ?>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
             <div class="container-fluid">
                 <a class="navbar-brand fw6" href="#">Teacher's <span class="change-color">Drive</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +68,7 @@ if (isset($_POST['signin'])) {
                 </div>
 
             </div>
-        </nav>
+        </nav> -->
     </header>
     <main>
         <section>
@@ -93,27 +96,23 @@ if (isset($_POST['signin'])) {
         <hr id="hr1">
     </main>
     <footer>
-        <div class="container-fluid p-0 d-flex">
-            <div class="footer-content">
-                <h4 class="fw5">Teacher's <span class="change-color">Drive</span></h4>
+        <div class="container-fluid m-0 p-0 ">
+        <div class="d-flex foo">
+            <div >
+                <h4 class="fw5">Lu<span class="change-color">Resource</span></h4>
                 <p>Keep all your files safe with <br> powerful online cloud storage</p>
             </div>
-            <div class="footer-nav">
-                <h5 class="">Products</h5>
-                <nav>
-                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fw6" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">Resources</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+             <div class="ms-5">
+                 <h5 class="mx-2">Navigate</h5>
+                 <div class="d-flex navi">
+                     <a href="#" class="mx-2">Home</a>
+                     <a href="#" class="mx-2">About us</a>
+                     <a href="#" class="mx-2">Resources</a>
+                 </div>
+             </div>
+             
+        </div>
+    </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

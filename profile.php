@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-// session_start();
+
 if (!isset($_SESSION['isUserLoggedIn'])) {
     echo "<script>window.location.href='signin.php ? user_not_loggedin';</script>";
 }
@@ -76,17 +76,10 @@ if ($_SESSION['role'] != 'teacher') {
                     <div class='col-md-6 profile-info text-light'>
                         <div class='col-12 col-md-6'>
                             <h2>$row[full_name]</h2>
-                            <p>Sylhet Bangladesh</p>
+                            <p style='font-size: 20px';>Lecturer</p>
                         </div>
                         <div class='details mt-5'>
-                            <div class='row'>
-                                <div class='col-md-3'>
-                                    <p>Email</p>
-                                </div>
-                                <div class='col-md-9'>
-                                    <h5>$row[email_id]</h5>
-                                </div>
-                            </div>
+                        
                             <div class='row'>
                                 <div class='col-md-3'>
                                     <p>Department</p>
@@ -97,18 +90,18 @@ if ($_SESSION['role'] != 'teacher') {
                             </div>
                             <div class='row'>
                                 <div class='col-md-3'>
-                                    <p>Country</p>
+                                    <p>Institution</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>Bangladesh</h5>
+                                    <h5>Leading University</h5>
                                 </div>
                             </div>
                             <div class='row'>
                                 <div class='col-md-3'>
-                                    <p>Postal Code</p>
+                                    <p>Email</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>3100</h5>
+                                    <h5>$row[email_id]</h5>
                                 </div>
                             </div>
                             <div class='row'>
@@ -119,9 +112,27 @@ if ($_SESSION['role'] != 'teacher') {
                                     <h5>$row[mbl_num]</h5>
                                 </div>
                             </div>
+                            <div class='row'>
+                                <div class='col-md-3'>
+                                    <p>Research Interest</p>
+                                </div>
+                                <div class='col-md-9'>
+                                    <h5>ML</h5>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-md-3'>
+                                    <p>Courses</p>
+                                </div>
+                                <div class='col-md-9'>
+                                    <h5>Many</h5>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class='col-md-2 float-end button'>
+                    <a href='signout.php'><button type='submit' class='btn btn-primary mb-2 pe-4 ps-4'>Edit</button></a>
                     <a href='signout.php'><button type='submit' class='btn btn-primary pe-4 ps-4'>Signout</button></a>
                     </div>
                 </div>";

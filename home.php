@@ -8,10 +8,6 @@ if($_SESSION['role']!='teacher'){
     echo "<script>window.location.href='signin.php';</script>";
 }
 ?>
-<!-- <h1>Teacher Home</h1>
-    <h2><?=$_SESSION['emailId']?></h2>
-    <h2><a href="profile.php">Profile</a></h2>
-    <h2><a href="signout.php">Sign Out</a></h2> -->
 
     <!DOCTYPE html>
 <html>
@@ -26,9 +22,12 @@ if($_SESSION['role']!='teacher'){
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header class="bg-header" >
-        <div class="container bg-top ">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
+    <header class="bg-header">
+        <div class="container bg-top">
+          <?php
+          include 'navBarIn.php';
+          ?>
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
             <div class="container-fluid">
                 <a class="navbar-brand fw6" href="#">Lu<span class="change-color">Resource</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -55,14 +54,13 @@ if($_SESSION['role']!='teacher'){
                 </div>
 
             </div>
-        </nav>
+        </nav> -->
         <div class="section-header mt-5">
           <h1>Explore our smart resources</h1>
           <p class="p-header1">At home in the office or on the go, Dropbox keeps your personal and busines files</p>
           <p class="p-header2">safe and gives you the tools you need to protect the work you share.</p>
           </div>
       </div>
-        </div>
     </header>
     <main>
         <section class="sec_section mt-5 ">
@@ -110,8 +108,8 @@ if($_SESSION['role']!='teacher'){
                      </a>
                   
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Add Lecture Notes</a></li>
-                      <li><a class="dropdown-item" href="#">Add Notice</a></li>
+                      <li><a class="dropdown-item" href="addResource.php">Add Lecture Notes</a></li>
+                      <li><a class="dropdown-item" href="noticeUpdate.php">Add Notice</a></li>
                       <!-- <li><a class="dropdown-item" href="#">Third</a></li> -->
                     </ul>
                 </div>
@@ -182,8 +180,8 @@ if($_SESSION['role']!='teacher'){
                     </div>
                   </div>
               </div>
-              </div> -->
-                <section>
+              </div> 
+                <section> -->
               <div class="container mt-5">
                 <!--   <div class="card card-block mb-2">
                     <h4 class="card-title">Card 1</h4>

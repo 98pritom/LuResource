@@ -34,12 +34,15 @@ if (isset($_POST['signup'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>SignUp</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style/signin.css">
+    <link rel="stylesheet" href="style/signinUp.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
+       <?php
+       include 'navBarOut.php';
+       ?>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
             <div class="container-fluid">
                 <a class="navbar-brand fw6" href="#">Teacher's <span class="change-color">Drive</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +68,7 @@ if (isset($_POST['signup'])) {
                 </div>
 
             </div>
-        </nav>
+        </nav> -->
     </header>
     <main>
         <section>
@@ -107,7 +110,7 @@ if (isset($_POST['signup'])) {
         </section>
         <hr id="hr1">
     </main>
-    <footer>
+    <!-- <footer>
         <div class="container-fluid p-0 d-flex">
             <div class="footer-content">
                 <h4 class="fw5">Teacher's <span class="change-color">Drive</span></h4>
@@ -129,6 +132,25 @@ if (isset($_POST['signup'])) {
                     </ul>
                 </nav>
             </div>
+    </footer> -->
+    <footer>
+        <div class="container-fluid m-0 p-0 ">
+        <div class="d-flex foo">
+            <div >
+                <h4 class="fw5">Lu<span class="change-color">Resource</span></h4>
+                <p>Keep all your files safe with <br> powerful online cloud storage</p>
+            </div>
+             <div class="ms-5">
+                 <h5 class="mx-2">Navigate</h5>
+                 <div class="d-flex navi">
+                     <a href="#" class="mx-2">Home</a>
+                     <a href="#" class="mx-2">About us</a>
+                     <a href="#" class="mx-2">Resources</a>
+                 </div>
+             </div>
+             
+        </div>
+    </div>
     </footer>
 
     <script>
@@ -142,7 +164,7 @@ if (isset($_POST['signup'])) {
 
             if (!/^[a-zA-Z .]+$/.test(firstName.value)) {
                 alert("First name can not contain number");
-                e.preventDefault()
+                e.preventDefault();
             }
 
             if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(num.value)) { /// +88
@@ -152,12 +174,12 @@ if (isset($_POST['signup'])) {
 
             if (!/[0-9]/.test(pass.value)) {
                 alert("Must contain a digit");
-                e.preventDefault()
+                e.preventDefault();
             }
 
             if (pass.value != confirmPass.value) {
                 alert("Password does not match");
-                e.preventDefault()
+                e.preventDefault();
             }
         })
     </script>
