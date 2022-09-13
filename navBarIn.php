@@ -23,7 +23,7 @@ echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
                     <button class='btn btn-outline-success' type='submit'>Search</button>
                     </form>
                     <div class='d-flex ms-5'>
-                      <a href='profile.php'><img src='images/logo.png' width='40px' alt=''></a>
+                      <a href='profile.php'><img src='images/profile3.png' width='40px' alt=''></a>
                   </div>
 
                 </div>

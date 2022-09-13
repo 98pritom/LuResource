@@ -55,7 +55,7 @@ if (isset($_POST['signup'])) {
     <main>
         <section>
             <div class="parent-div">
-                <div class="img-div">
+                <div class="">
                     <img src="images/login-banner.jpg" alt="" class="img-design">
                 </div>
                 <div class="form-div">

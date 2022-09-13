@@ -80,7 +80,7 @@ a:hover{
     padding: 45px;
   }
   .txt_field{
-    position: relative;
+    /* position: relative; */
     border-bottom: 1px solid #adadad;
     margin: 30px 0;
     color: var(--sec-text-color);
