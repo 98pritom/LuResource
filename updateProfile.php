@@ -21,7 +21,7 @@
       ?>
       </div>
     </header>
-    <h1 class="text-center">Add Resources</h1>
+    <h1 class="text-center">Update Profile</h1>
     <div class="container">
       <form class="form-design mx-auto">
       
@@ -62,31 +62,6 @@
             <input type="email" class="form-control" id="exampleInputEmail" required>
           </div>
         </div>
-
-        <!-- <div class="mb-3 d-flex">
-          <label for="exampleInputPassword" class="col-sm-3 col-form-label">File Type</label>
-          <select class="form-control ms-1" id="exampleSelectLanguage" required>
-            <option value="" class="text-dark">Select file type</option>
-            <option value="en" class="text-dark">pdf</option>
-            <option value="de" class="text-dark">docx</option>
-            <option value="es" class="text-dark">pptx</option>
-            <option value="ru" class="text-dark">Video</option>
-          </select>
-        </div> -->
-      
-        <!-- <div class="row mb-3">
-          <label for="exampleCustomFile" class="col-sm-3 col-form-label">Add File</label>
-          <div class="col-sm-9">
-            <input type="file" class="form-control" id="exampleCustomFile" required>
-          </div>
-        </div> -->
-      
-        <!-- <div class="row mb-3">
-          <label for="exampleTextareaBio" class="col-sm-3 col-form-label">Description</label>
-          <div class="col-sm-9">
-            <textarea class="form-control" id="exampleTextareaBio" placeholder="Description" required></textarea>
-          </div>
-        </div> -->
       
         <div class="row mb-0">
           <div class="col-sm-9 offset-sm-3">

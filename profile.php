@@ -30,32 +30,10 @@ if ($_SESSION['role'] != 'teacher') {
     <div class="bg">
         <div class="container">
             <section id="navbar">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
-                    <div class="container-fluid">
-                        <a class="navbar-brand fw6" href="#">Teacher's <span class="change-color">Drive</span></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active fw6" aria-current="page" href="home.php">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link fw6" href="#">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link fw6" href="#">Resources</a>
-                                </li>
-                            </ul>
-                            <div class="d-flex">
-                                <img src="images/logo.png" width="40px" alt="">
-                            </div>
+                <?php
+                include 'navBarIn.php';
+                ?>
 
-                        </div>
-
-                    </div>
-                </nav>
             </section>
 
             <main id="main" class="p-5">
@@ -71,7 +49,7 @@ if ($_SESSION['role'] != 'teacher') {
 
                     echo "<div class='row'>
                     <div class='col-md-4 col-12 mb-5 lg-profile'>
-                        <img src='images/logo.png' alt='' height='300px' width='300px' class='rounded-circle border border-secondary img-thumbnail'>
+                        <img src='$row[image]' alt='image' height='300px' width='300px' class='rounded-circle border border-secondary img-thumbnail'>
                     </div>
                     <div class='col-md-6 profile-info text-light'>
                         <div class='col-12 col-md-6'>

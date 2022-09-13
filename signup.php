@@ -17,15 +17,15 @@ if (isset($_POST['signup'])) {
         echo "<script>window.location.href='signup.php ? user_already_exist'</script>";
     } else {
 
-        // $image = $_POST['image'];
-        // $imageName = $image['name'];
-        // $image_location = $image['tmp_name'];
-        // $imageDes = "storage/" . $imageName;
+        $image = $_FILES['image'];
+        $imageName = $image['name'];
+        $image_location = $image['tmp_name'];
+        $imageDes = "storage/" . $imageName;
 
-        // move_uploaded_file($image_location, $imageDes);
+        move_uploaded_file($image_location, $imageDes);
 
         $password = crypt($_POST['password'],"LuResource");
-        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password', 'teacher')";
+        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`,`image`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password', '$imageDes', 'teacher')";
         $run = mysqli_query($conn, $query);
 
         if ($run) {
@@ -51,33 +51,6 @@ if (isset($_POST['signup'])) {
        <?php
        include 'navBarOut.php';
        ?>
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light nav-design">
-            <div class="container-fluid">
-                <a class="navbar-brand fw6" href="#">Teacher's <span class="change-color">Drive</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fw6" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">Resources</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <a href="signin.html"><button class="btn fw6" type="submit">Sign In</button></a>
-                        <a href="signup.html"><button class="btn btn-success fw6" type="submit">Sign Up</button></a>
-                    </div>
-
-                </div>
-
-            </div>
-        </nav> -->
     </header>
     <main>
         <section>
@@ -171,7 +144,7 @@ if (isset($_POST['signup'])) {
             }
 
             if (pass.value != confirmPass.value) {
-                alert("Password does not match");
+                alert("Password and confirm password does not match!!");
                 e.preventDefault();
             }
         })
