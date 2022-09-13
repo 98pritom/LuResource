@@ -17,7 +17,7 @@ if (isset($_POST['signin'])) {
         $_SESSION['emailId'] = $_POST['emailid'];
         $_SESSION['role'] = $data['role'];
 
-        echo "<script>window.location.href='home.php ? user_loggedin'</script>";
+        echo "<script>window.location.href='resource.php ? user_loggedin'</script>";
     }
     else{
         echo "<script>alert('incorrect_email_or_password');</script>";

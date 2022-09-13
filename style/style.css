@@ -61,19 +61,7 @@ a:hover{
   }
   /* Navbar style */
 
-  
-  .btn-design{
-    color: var(--sec-text-color);
-    background-color: var(--thrd-color);
-    border: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    padding: 5px 30px;
-  }
- /* Login section */
-
- .section-header{
+  .section-header{
     text-align: center;   
 }
 
@@ -92,21 +80,20 @@ a:hover{
     background-color: rgb(239, 245, 245);
     margin-top: 25px;
 }
-.drop{
-    display: flex;
-    padding: 20px;
-    
-}
-.dropdown{
-  box-shadow: 0px 0px 10px #00000080;
 
-}
+/* card section */
 .card{
-  margin-bottom: 25px;
-  box-shadow: 0px 0px 10px #00000080;
-} 
+    
+    display: flex;
+    width:400px;
+    height:500px;
+}
 
- /* Footer section */
+
+
+
+
+/* Footer section */
 .foo a{
     text-decoration: none;
     color: rgb(223, 221, 221);
@@ -121,6 +108,3 @@ a:hover{
 .foo a:hover {
   color: rgb(182, 179, 179);
 }
-
-
-
