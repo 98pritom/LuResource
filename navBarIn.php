@@ -9,10 +9,10 @@ echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
                 <div class='collapse navbar-collapse justify-content-center align-items-center' id='navbarSupportedContent'>
                     <ul class='navbar-nav m-auto mb-2 mb-lg-0'>
                         <li class='nav-item'>
-                            <a class='nav-link active fw6' aria-current='page' href='#'>Home</a>
+                            <a class='nav-link fw6' aria-current='page' href='home.php'>Home</a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link fw6' href='#'>About Us</a>
+                            <a class='nav-link fw6' href='aboutus.php'>About Us</a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link fw6' href='#'>Resources</a>

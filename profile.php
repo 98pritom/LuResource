@@ -132,7 +132,7 @@ if ($_SESSION['role'] != 'teacher') {
                         </div>
                     </div>
                     <div class='col-md-2 float-end button'>
-                    <a href='signout.php'><button type='submit' class='btn btn-primary mb-2 pe-4 ps-4'>Edit</button></a>
+                    <a href='updateProfile.php'><button type='submit' class='btn btn-primary mb-2 pe-4 ps-4'>Edit</button></a>
                     <a href='signout.php'><button type='submit' class='btn btn-primary pe-4 ps-4'>Signout</button></a>
                     </div>
                 </div>";

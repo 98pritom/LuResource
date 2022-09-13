@@ -11,12 +11,21 @@ if (isset($_POST['signup'])) {
     $query = "SELECT * FROM `users` WHERE email_id = '{$_POST['emailId']}'";
     $run = mysqli_query($conn, $query);
     $data = mysqli_fetch_array($run);
+    // print_r($_FILES['image']);
 
     if (count($data) > 0) {
         echo "<script>window.location.href='signup.php ? user_already_exist'</script>";
     } else {
+
+        // $image = $_POST['image'];
+        // $imageName = $image['name'];
+        // $image_location = $image['tmp_name'];
+        // $imageDes = "storage/" . $imageName;
+
+        // move_uploaded_file($image_location, $imageDes);
+
         $password = crypt($_POST['password'],"LuResource");
-        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password','teacher')";
+        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password', 'teacher')";
         $run = mysqli_query($conn, $query);
 
         if ($run) {
@@ -110,29 +119,7 @@ if (isset($_POST['signup'])) {
         </section>
         <hr id="hr1">
     </main>
-    <!-- <footer>
-        <div class="container-fluid p-0 d-flex">
-            <div class="footer-content">
-                <h4 class="fw5">Teacher's <span class="change-color">Drive</span></h4>
-                <p>Keep all your files safe with <br> powerful online cloud storage</p>
-            </div>
-            <div class="footer-nav">
-                <h5 class="">Products</h5>
-                <nav>
-                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fw6" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw6" href="#">Resources</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-    </footer> -->
+
     <footer>
         <div class="container-fluid m-0 p-0 ">
         <div class="d-flex foo">
@@ -155,7 +142,8 @@ if (isset($_POST['signup'])) {
 
     <script>
         const firstName = document.getElementById("name");
-        const email = document.getElementById("email");
+        const email_id = document.getElementById("email");
+        const number = document.getElementById("number");
         const pass = document.getElementById("npass");
         const confirmPass = document.getElementById("cpass");
         const form = document.getElementById("form");
@@ -163,11 +151,16 @@ if (isset($_POST['signup'])) {
         form.addEventListener("submit", (e) => {
 
             if (!/^[a-zA-Z .]+$/.test(firstName.value)) {
-                alert("First name can not contain number");
+                alert("Name can not contain number");
                 e.preventDefault();
             }
 
-            if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(num.value)) { /// +88
+            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+                alert("Must be leading university edu mail");
+                e.preventDefault();
+            }
+
+            if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(number.value)) { /// +88
                 alert("Must be a Bangladeshi number");
                 e.preventDefault();
             }

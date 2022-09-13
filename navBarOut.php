@@ -9,7 +9,7 @@ echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
                 <div class='collapse navbar-collapse justify-content-center align-items-center' id='navbarSupportedContent'>
                     <ul class='navbar-nav m-auto mb-2 mb-lg-0'>
                         <li class='nav-item'>
-                            <a class='nav-link active fw6' aria-current='page' href='signin.php'>Home</a>
+                            <a class='nav-link fw6' aria-current='page' href='home.php'>Home</a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link fw6' href='aboutus.php'>About Us</a>
@@ -19,8 +19,8 @@ echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
                         </li>
                     </ul>
                     <div class='d-flex'>
-                        <a href='signin.html'><button class='btn fw6' type='submit'>Sign In</button></a>
-                        <a href='signup.html'><button class='btn btn-success fw6' type='submit'>Sign Up</button></a>
+                        <a href='signin.php'><button class='btn fw6' type='submit'>Sign In</button></a>
+                        <a href='signup.php'><button class='btn btn-success fw6' type='submit'>Sign Up</button></a>
                     </div>
 
                 </div>

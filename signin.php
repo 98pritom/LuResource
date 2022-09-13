@@ -79,7 +79,7 @@ if (isset($_POST['signin'])) {
                 <div class="form-div">
                     <h1>Welcome back!</h1>
                     <p class="fw4">Please login to your account</p>
-                    <form method="post">
+                    <form method="post" id="form">
                         <div class="mb-3 txt_field">
                             <input type="email" id="email" name="emailid" placeholder="Email">
                         </div>
@@ -114,6 +114,25 @@ if (isset($_POST['signin'])) {
         </div>
     </div>
     </footer>
+
+    <script>
+        const email_id = document.getElementById("email");
+        const pass = document.getElementById("pass");
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", (e) => {
+
+            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+                alert("Must be leading university edu mail");
+                e.preventDefault();
+            }
+
+            if (!/[0-9]/.test(pass.value)) {
+                alert("Must contain a digit");
+                e.preventDefault();
+            }
+        })
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
