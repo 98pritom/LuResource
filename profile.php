@@ -54,7 +54,7 @@ if ($_SESSION['role'] != 'teacher') {
                     <div class='col-md-6 profile-info text-light'>
                         <div class='col-12 col-md-6'>
                             <h2>$row[full_name]</h2>
-                            <p style='font-size: 20px';>Lecturer</p>
+                            <p style='font-size: 20px';>$row[designation]</p>
                         </div>
                         <div class='details mt-5'>
                         
@@ -71,7 +71,7 @@ if ($_SESSION['role'] != 'teacher') {
                                     <p>Institution</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>Leading University</h5>
+                                    <h5>$row[inst]</h5>
                                 </div>
                             </div>
                             <div class='row'>
@@ -95,7 +95,7 @@ if ($_SESSION['role'] != 'teacher') {
                                     <p>Research Interest</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>ML</h5>
+                                    <h5>$row[ri]</h5>
                                 </div>
                             </div>
                             <div class='row'>
@@ -103,7 +103,7 @@ if ($_SESSION['role'] != 'teacher') {
                                     <p>Courses</p>
                                 </div>
                                 <div class='col-md-9'>
-                                    <h5>Many</h5>
+                                    <h5>$row[crs]</h5>
                                 </div>
                             </div>
                             
