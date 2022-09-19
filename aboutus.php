@@ -14,7 +14,14 @@
     <header class="bg-header">
         <div class="container bg-top ">
             <?php
-            include 'navBarOut.php';
+            require('config.php');
+
+            if (!isset($_SESSION['isUserLoggedIn'])) {
+                include 'navBarOut.php';
+            }else{
+                include 'navBarIn.php';
+            }
+            
             ?>
         </div>
         </div>

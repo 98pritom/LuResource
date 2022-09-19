@@ -144,7 +144,7 @@ if ($_SESSION['role'] != 'teacher') {
           <p>Keep all your files safe with <br> powerful online cloud storage</p>
         </div>
         <div class="ms-5">
-          <h5 class="mx-2">Products</h5>
+          <h5 class="mx-2">Navigation</h5>
           <div class="d-flex">
             <a href="#" class="mx-2">Home</a>
             <a href="#" class="mx-2">About us</a>

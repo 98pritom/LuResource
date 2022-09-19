@@ -13,7 +13,7 @@ $dataFetchQuery = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['emailId']
 $run = mysqli_query($conn, $dataFetchQuery);
 $data = mysqli_fetch_array($run);
 // print_r($data);
-echo $data['image'];
+// echo $data['image'];
 
 
 if (isset($_POST['update'])) {
@@ -116,7 +116,7 @@ if (isset($_POST['update'])) {
       <div class="row mb-0">
         <div class="col-sm-9 offset-sm-3">
           <button type="submit" class="btn btn-primary" name="update">Update</button>
-          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+          <button type="reset" class="btn btn-secondary"><a href="profile.php" class="nav-link p-0 text-white">Cancel</a></button>
         </div>
       </div>
     </form>

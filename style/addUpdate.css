@@ -38,7 +38,7 @@ a:hover{
     background: var(--prim-color);
   }
   h1{
-    font-size: 3.438;
+    font-size: 3rem;
     color: var(--sec-text-color);
   }
   .fw4 {
@@ -54,6 +54,7 @@ a:hover{
     border: 1px solid;
     width: 484px;
     padding: 50px;
+    border-radius: 10px;
   }
   /* header section */
   .bg-header{
@@ -73,3 +74,4 @@ a:hover{
     margin-top: 2.5rem;
   }
   /* navbar */
+
