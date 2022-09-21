@@ -1,5 +1,9 @@
 
 <?php
+$dataFetchQuery = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['emailId']}'";
+$run = mysqli_query($conn, $dataFetchQuery);
+$data = mysqli_fetch_array($run);
+
 echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
             <div class='container-fluid'>
                 <a class='navbar-brand fw6' href='#'>Lu<span class='change-color'>Resource</span></a>
@@ -23,7 +27,7 @@ echo "<nav class='navbar navbar-expand-lg navbar-light bg-light nav-design'>
                     <button class='btn btn-outline-success' type='submit'>Search</button>
                     </form>
                     <div class='d-flex ms-5'>
-                      <a href='profile.php'><img src='images/profile3.png' width='40px' alt=''></a>
+                      <a href='profile.php'><img src='$data[image]' class='rounded-circle img-thumbnail' width='40px' alt='Profile'></a>
                   </div>
 
                 </div>

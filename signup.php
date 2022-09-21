@@ -25,7 +25,7 @@ if (isset($_POST['signup'])) {
         move_uploaded_file($image_location, $imageDes);
 
         $password = crypt($_POST['password'],"LuResource");
-        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`mbl_num`, `password`,`image`, `role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','{$_POST['mblNumber']}','$password', '$imageDes', 'teacher')";
+        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`password`,`role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','$password','teacher')";
         $run = mysqli_query($conn, $query);
 
         if ($run) {
@@ -71,19 +71,19 @@ if (isset($_POST['signup'])) {
                         <div class="mb-3 txt_field">
                             <input type="text" id="department" name="department" placeholder="Department">
                         </div>
-                        <div class="mb-3 txt_field">
+                        <!-- <div class="mb-3 txt_field">
                             <input type="number" id="number" name="mblNumber" placeholder="Mobile Number">
-                        </div>
+                        </div> -->
                         <div class="mb-3 txt_field">
                             <input type="text" id="npass" name="password" placeholder="Password">
                         </div>
                         <div class="mb-3 txt_field">
                             <input type="text" id="cpass" name="cpass" placeholder="Confirm Password">
                         </div>
-                        <div class="mb-3 ">
+                        <!-- <div class="mb-3 ">
                             <input class="form-control" type="file" id="image" name="image" placeholder="image">
                             <img src="" alt="">
-                        </div>
+                        </div> -->
                         <button type="submit" name="signup" class="btn-design">Sign Up</button><br>
                         <p class="d-inline">Already have an account?</p><a class="change-color" href="signin.php"> Sign In</a>
                     </form>

@@ -67,12 +67,12 @@ if (isset($_POST['update'])) {
   </header>
   <h1 class="text-center">Update Profile</h1>
   <div class="container">
-    <form class="form-design mx-auto" method="POST" enctype="multipart/form-data">
+    <form class="form-design mx-auto" method="POST" id="form" enctype="multipart/form-data">
 
       <div class="row mb-3">
         <label for="" class="col-sm-3 col-form-label">Designation</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" value="<?php echo $data['designation']?>" name="designation" id="exampleInputName" required>
+          <input type="text" class="form-control" value="<?php echo $data['designation']?>" name="designation" id="designation" required>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ if (isset($_POST['update'])) {
       <div class="row mb-3">
         <label for="exampleInputEmail" class="col-sm-3 col-form-label">Phone</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" value="<?php echo $data['mbl_num']?>" name="phone" id="exampleInputEmail" required>
+          <input type="text" class="form-control" value="<?php echo $data['mbl_num']?>" name="phone" id="number" required>
         </div>
       </div>
       <div class="row mb-3">
@@ -123,5 +123,24 @@ if (isset($_POST['update'])) {
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
+
+<script>
+        const designation = document.getElementById("designation");
+        const number = document.getElementById("number");
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", (e) => {
+
+            if (!/^[a-zA-Z .]+$/.test(designation.value)) {
+                alert("Designation can not contain number");
+                e.preventDefault();
+            }
+
+            if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(number.value)) { /// +88
+                alert("Must be a Bangladeshi number");
+                e.preventDefault();
+            }
+        })
+    </script>
 
 </html>
