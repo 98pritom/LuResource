@@ -2,7 +2,7 @@
 require('config.php');
 
 if(isset($_SESSION['isUserLoggedIn'])){
-    echo "<script>window.location.href='home.php ? user_already_loggedin';</script>";
+    echo "<script>window.location.href='index.php ? user_already_loggedin';</script>";
 }
 
 if (isset($_POST['signin'])) {
