@@ -116,7 +116,8 @@ if (isset($_POST['signup'])) {
     <script>
         const firstName = document.getElementById("name");
         const email_id = document.getElementById("email");
-        const number = document.getElementById("number");
+        // const number = document.getElementById("number");
+        const dept = document.getElementById("department")
         const pass = document.getElementById("npass");
         const confirmPass = document.getElementById("cpass");
         const form = document.getElementById("form");
@@ -133,13 +134,18 @@ if (isset($_POST['signup'])) {
                 e.preventDefault();
             }
 
-            if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(number.value)) { /// +88
-                alert("Must be a Bangladeshi number");
+            if (!/^[a-zA-Z .]+$/.test(dept.value)) {
+                alert("Department can not contain number");
                 e.preventDefault();
             }
 
-            if (!/[0-9]/.test(pass.value)) {
-                alert("Must contain a digit");
+            // if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(number.value)) { /// +88
+            //     alert("Must be a Bangladeshi number");
+            //     e.preventDefault();
+            // }
+
+            if (!/([0-9a-zA-Z]){6,}/.test(pass.value)) {
+                alert("Password must be 6 digit or more!");
                 e.preventDefault();
             }
 
