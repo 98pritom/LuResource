@@ -129,7 +129,7 @@ if (isset($_POST['signup'])) {
                 e.preventDefault();
             }
 
-            if(!/^[a-zA-Z .]@lus.ac.bd || (cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
                 alert("Must be leading university edu mail");
                 e.preventDefault();
             }
