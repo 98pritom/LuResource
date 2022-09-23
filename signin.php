@@ -100,8 +100,8 @@ if (isset($_POST['signin'])) {
                 e.preventDefault();
             }
 
-            if (!/[0-9]/.test(pass.value)) {
-                alert("Must contain a digit");
+            if (!/([0-9a-zA-Z]){6,}/.test(pass.value)) {
+                alert("Must be 6 character or more!");
                 e.preventDefault();
             }
         })

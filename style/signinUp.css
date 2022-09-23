@@ -18,7 +18,7 @@
 }
 
 a:hover{
-    color: var(--sec-text-color-color);
+    color: var(--sec-text-color);
 }
 #hr1{
     margin-top: 70px;
@@ -38,7 +38,7 @@ a:hover{
     background: var(--prim-color);
   }
   h1{
-    font-size: 3.438;
+    font-size: 3rem;
     color: var(--sec-text-color);
   }
   .fw4 {

@@ -48,10 +48,10 @@ if ($_SESSION['role'] != 'teacher') {
                 // while ($row = mysqli_fetch_array($result)) {
 
                     echo "<div class='row'>
-                    <div class='col-md-4 col-12 mb-5 lg-profile'>
+                    <div class='col-md-4 col-12 mb-5'>
                         <img src='$row[image]' alt='image' height='300px' width='300px' class='rounded-circle border border-secondary img-thumbnail'>
                     </div>
-                    <div class='col-md-6 profile-info text-light'>
+                    <div class='col-md-6 text-light'>
                         <div class='col-12 col-md-6'>
                             <h2>$row[full_name]</h2>
                             <p style='font-size: 20px';>$row[designation]</p>

@@ -55,7 +55,7 @@ if (isset($_POST['signup'])) {
     <main>
         <section>
             <div class="parent-div">
-                <div class="">
+                <div>
                     <img src="images/login-banner.jpg" alt="" class="img-design">
                 </div>
                 <div class="form-div">
@@ -125,17 +125,17 @@ if (isset($_POST['signup'])) {
         form.addEventListener("submit", (e) => {
 
             if (!/^[a-zA-Z .]+$/.test(firstName.value)) {
-                alert("Name can not contain number");
+                alert("Name can not contain number or special character!");
                 e.preventDefault();
             }
 
-            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+            if(!/^[a-zA-Z .]@lus.ac.bd || (cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
                 alert("Must be leading university edu mail");
                 e.preventDefault();
             }
 
-            if (!/^[a-zA-Z .]+$/.test(dept.value)) {
-                alert("Department can not contain number");
+            if (!/^[a-zA-Z]+$/.test(dept.value)) {
+                alert("Department can not contain number or special character!");
                 e.preventDefault();
             }
 

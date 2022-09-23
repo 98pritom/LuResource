@@ -52,6 +52,18 @@ if ($_SESSION['role'] != 'teacher') {
           </ul>
         </div>
         <div class="dropdown mx-2 bg-white">
+          <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <small>File</small><br>
+            <b> File types</b>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">pdf</a></li>
+            <li><a class="dropdown-item" href="#">docx</a></li>
+            <li><a class="dropdown-item" href="#">pptx</a></li>
+          </ul>
+        </div>
+        <div class="dropdown mx-2 bg-white">
           <a class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <small>Add files</small><br>
             <b> All file types-</b>
