@@ -12,7 +12,7 @@
 
 <body>
     <header class="bg-header">
-        <div class="container bg-top ">
+        <div class="container bg-top">
             <?php
             require('config.php');
 

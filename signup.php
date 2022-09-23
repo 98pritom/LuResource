@@ -102,7 +102,7 @@ if (isset($_POST['signup'])) {
             </div>
              <div class="ms-5">
                  <h5 class="mx-2">Navigate</h5>
-                 <div class="d-flex navi">
+                 <div class="d-flex">
                      <a href="#" class="mx-2">Home</a>
                      <a href="#" class="mx-2">About us</a>
                      <a href="#" class="mx-2">Resources</a>
