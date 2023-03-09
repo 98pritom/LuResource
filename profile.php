@@ -1,47 +1,56 @@
-<?php
-require('config.php');
+<?php include 'navBarIn.php'; ?>
 
-if (!isset($_SESSION['isUserLoggedIn'])) {
-    echo "<script>window.location.href='signin.php ? user_not_loggedin';</script>";
-}
-if ($_SESSION['role'] != 'teacher') {
-    echo "<script>window.location.href='signin.php';</script>";
-}
+
+<?php
+
+
+
+
 // $user_data = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['emailId']}'";
 // $result = mysqli_query($conn, $user_data);
 // $row = mysqli_fetch_array($result);
 
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="style/resource.css">
+<link rel="stylesheet" href="style/profile.css">
+<!-- <style>
+    .proimage
+    {
+        width:15rem;
+        height:15rem;
+        object-fit:cover;
+    }
+   
+  .col-lg-4
+  {
+    margin-bottom: 2rem;
+  }
+  .card-block
+  {
+    height:100%;
+ 
+  }
+  .resource
+  {
+    text-decoration:none;
+  }
+  .card h3, h6{
+    color:black;
+  }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/profile.css">
-</head>
-
-<body>
+</style> -->
 
     <div class="bg">
         <div class="container">
-            <section id="navbar">
-                <?php
-                include 'navBarIn.php';
-                ?>
-
-            </section>
+           
 
             <main id="main" class="p-5">
                 <?php
 
-                $user_data = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['emailId']}'";
+                $user_data = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['email']}'";
                 $result = mysqli_query($conn, $user_data);
                 $row = mysqli_fetch_array($result);
+                $myid = $row['id'];
                 // print_r($row);
 
 
@@ -49,9 +58,9 @@ if ($_SESSION['role'] != 'teacher') {
 
                     echo "<div class='row'>
                     <div class='col-md-4 col-12 mb-5'>
-                        <img src='$row[image]' alt='image' height='300px' width='300px' class='rounded-circle border border-secondary img-thumbnail'>
+                        <img src='$row[image]' alt='image' height='300px' width='300px' class='rounded-circle border border-secondary img-thumbnail proimage'>
                     </div>
-                    <div class='col-md-6 text-light'>
+                    <div class='col-md-6 text-dark'>
                         <div class='col-12 col-md-6'>
                             <h2>$row[full_name]</h2>
                             <p style='font-size: 20px';>$row[designation]</p>
@@ -110,35 +119,100 @@ if ($_SESSION['role'] != 'teacher') {
                         </div>
                     </div>
                     <div class='col-md-2 float-end button'>
-                    <a href='updateProfile.php'><button type='submit' class='btn btn-primary mb-2 pe-4 ps-4'>Edit</button></a>
-                    <a href='signout.php'><button type='submit' class='btn btn-primary pe-4 ps-4'>Signout</button></a>
+                    <a href='updateProfile.php'><button type='submit' class='btn btn-info mb-2 pe-4 ps-4'>Edit</button></a>
+                    <a href='signout.php'><button type='submit' class='btn btn-danger pe-4 ps-4'>Signout</button></a>
                     </div>
                 </div>";
                 // }
                 ?>
             </main>
 
-            <footer>
-                <hr style="height:2px; width:100%; border-width:0; color:white; background-color:white">
-                <div class="row mt-5">
-                    <div class="col-md-4 text-light">
-                        <h3>LuResource</h3>
-                        <p>Keep all your files safe with powerful online cloud storage </p>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="mb-3 text-light fw-bold">Products</p>
-                        <div class="d-flex gap-3 text-light">
-                            <p>Home</p>
-                            <p>About us</p>
-                            <p>Resources</p>
-                        </div>
-                    </div>
+        
+
+            <div class="container mt-5">
+      <!--   <div class="card card-block mb-2">
+                    <h4 class="card-title">Card 1</h4>
+                    <p class="card-text">Welcom to bootstrap card styles</p>
+                    <a href="#" class="btn btn-primary">Submit</a>
+        
+                  </div>   -->
+      <?php
+      if($data['role'] == 'teacher')
+      {
+        echo "
+        <hr>
+        <h3 class='text-dark mb-4 mt-5'>My Resources</h3>
+   
+        ";
+      }
+       
+      ?>
+     
+      <div class="row">
+
+      <?php
+        
+        $alldata = mysqli_query($conn, "SELECT * FROM `resource` WHERE user_id = '$myid'");
+
+        while ($row = mysqli_fetch_array($alldata)) {
+        echo "
+        <div class='col-lg-4 col-md-3 col-sm-6 allshow'>
+        <a href='resourceshow.php?id=$row[id]' class='resource'>
+          <div class='card card-block'>
+            <img src='images/cloudcomp-2.png' alt=''>
+            <h3 class='card-title m-1'>$row[topic]</h3>
+            <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
+            <div class='d-felx mt-3'>
+                    <a href='editresource.php?id=$row[id]' class='btn btn-info'>Edit</a>
+                    <a href='deleteresource.php?id=$row[id]' class='btn btn-danger'>Delete</a>
                 </div>
-            </footer>
+          </div>
+          </a>
+        </div>";
+        }
+       
+
+        ?>
+        <hr>
+        <div class="container">
+            <h1 class="text-center mt-3 mb-5">My Favourite</h1>
+            <div class="row">
+            <?php
+        
+            $alldata = mysqli_query($conn, "SELECT * FROM addfav, resource where addfav.resource_id  = resource.id AND addfav.user_id='$myid'");
+
+            while ($row = mysqli_fetch_array($alldata)) {
+            echo "
+            <div class='col-lg-4 col-md-3 col-sm-6 allshow'>
+            <a href='resourceshow.php?id=$row[id]' class='resource'>
+            <div class='card card-block'>
+                <img src='images/cloudcomp-2.png' alt=''>
+                <h3 class='card-title m-1'>$row[topic]</h3>
+                <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
+                <div class='d-felx mt-3'>
+                        <a href='deletefav.php?id=$row[id]' class='btn btn-danger'>Delete</a>
+                    </div>
+            </div>
+            </a>
+            </div>";
+            }
+        
+
+            ?>
+            </div>
         </div>
+
+
+
+      </div>
+
+      </div>
+
+
+
+    
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
-</html>
+
+    <?php include 'footer.php'; ?>

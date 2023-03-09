@@ -33,9 +33,10 @@ a:hover{
   }
   
   body {
-    max-width: 1440px;
-    margin: 0 auto;
-    background: var(--prim-color);
+    max-width: 100;
+    /* margin: 0 auto; */
+    /* background: var(--prim-color); */
+    background-color: #e8e8e8;
   }
   h1{
     font-size: 3rem;
@@ -62,16 +63,28 @@ a:hover{
   }
   .bg-top{
     background-color: #004643;
-    padding:40px;
+  
   }
   /* navbar */
-  .change-color{
+  /* .change-color{
     color: var(--sec-color);
     text-decoration: none;
   }
   .nav-design{
     border-radius: 5px;
-    margin-top: 2.5rem;
+
   }
+  .navbar
+  {
+    background: #004643;
+    color: white !important;
+    border-bottom: 1px solid #124d4c;
+  }
+  
+  .navbar a{
+    color: white !important;
+  } */
   /* navbar */
 
+
+ 

@@ -1,0 +1,52 @@
+.footer
+{
+    background: #004643;
+    margin-top: 15rem !important;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: white !important;
+}
+
+.footer p{
+    margin-top: 6rem;
+}
+
+.footer h2{
+    color: white !important;
+    font-weight: 600;
+}
+
+
+.mylink a
+{
+    color: rgb(201, 200, 200);
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+.footer h4{
+    color: white;
+}
+
+.footer a{
+    color: rgb(201, 200, 200);
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer .container{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .mylink 
+{
+    margin-bottom: 2rem !important;
+}
+
+.footer p{
+    display: none;
+}
+  }

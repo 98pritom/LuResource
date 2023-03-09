@@ -1,0 +1,104 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Outlines 7 0 R /PageMode /UseNone /Pages 12 0 R /Type /Catalog
+>>
+endobj
+6 0 obj
+<<
+/Author () /CreationDate (D:20230304023810-06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20230304023810-06'00') /Producer (xhtml2pdf <https://github.com/xhtml2pdf/xhtml2pdf/>) 
+  /Subject () /Title (Django HTMLtoPDF Tutorial) /Trapped /False
+>>
+endobj
+7 0 obj
+<<
+/Count 4 /First 8 0 R /Last 11 0 R /Type /Outlines
+>>
+endobj
+8 0 obj
+<<
+/Dest [ 4 0 R /Fit ] /Next 9 0 R /Parent 7 0 R /Title (sunday)
+>>
+endobj
+9 0 obj
+<<
+/Dest [ 4 0 R /Fit ] /Next 10 0 R /Parent 7 0 R /Prev 8 0 R /Title (monday)
+>>
+endobj
+10 0 obj
+<<
+/Dest [ 4 0 R /Fit ] /Next 11 0 R /Parent 7 0 R /Prev 9 0 R /Title (tuesday)
+>>
+endobj
+11 0 obj
+<<
+/Dest [ 4 0 R /Fit ] /Parent 7 0 R /Prev 10 0 R /Title (wednesday)
+>>
+endobj
+12 0 obj
+<<
+/Count 1 /Kids [ 4 0 R ] /Type /Pages
+>>
+endobj
+13 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 896
+>>
+stream
+Gb"/gbAQ&g&4Q?iMHR@g`,K>`dP=CX!'rP=[-B9bWsEGVFV4f\qXLCqlY0"XK;q@E>-KT?1ZZ5:M8qB'oEU,sRlS9(%Yn[&8<D^2.\S!b#cDt=/XcDnY+s)F<^mt2R2226oXU[-30k)s,/e2=69DK'epeoY=Pgmm6#.a!FBc$c,Z-&p2M-oC$4mA&>7Mf3bDmRT-=/B,*`*1hQ43R/:p28>"qJtXkR.K;?SWVE#C-"8ZFIUIrZ:W#a:AWMZ_23ej&V=Nng?_B3D*3#9ST!5<O#_oOep*1[=*\3Opd6i+'LY!K*bG-aH:DaDi5O`IXFlE?B24]Da'LgdWT5p1TL[jaIlO;TRkT$.eHBFQ5Hb)V++&#i*+>.Ud_DCZV#(]O<1gLQU@ua_RE-+T<D@r%B6ideLt&4-ZqFRWP.Dh<B80YY"XS7LLjp@;eEnW/W7>3k5"7s'Sr!UQ+!uB.MZ*2]j7]mN%mFe/4tR;E-??N.VkU2&PI*%'g8^<[*/':.-bU#*ul*gbj-imeaNaFepG`U$<ji;JT<`N&Q^mZQqP!ha[4l]?8JlK+.6rQ7Q]e6,"(6a?8JmN4(r]R$mSHT8(m%<[puh?<Q"Olm)3gFbFTnoN*h:[JbV^]3.F"Zh-m=Kh=3Dh6^FuLYh!\Q5l9Al[':8FHN&%/5\ha$7E6"e&^XGX]"$=Vai;Ca\N9E;,W:<6P9Z\ET-L!.?Tr7"_Q(gRa_0%ZbsZr.I^sgZ"40YQ_XAoj!?D2(.A3NY=P>JbM^N0`dfabKq6p?-o!fbT.mRG^I;2cicAmF8J<#0ZV1;U*!Yt<;JC_<a62Z^*%A7(sDARXCRb<%MjZ`q]dJktrp"tC86I^JpdJe6`f(Cikj`0U;ht;hcLlR:OLu&6]OSf68Yt*"~>endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000073 00000 n 
+0000000114 00000 n 
+0000000221 00000 n 
+0000000333 00000 n 
+0000000538 00000 n 
+0000000623 00000 n 
+0000000900 00000 n 
+0000000972 00000 n 
+0000001056 00000 n 
+0000001153 00000 n 
+0000001252 00000 n 
+0000001341 00000 n 
+0000001401 00000 n 
+trailer
+<<
+/ID 
+[<1b30caba530758929fa02808943b22f8><1b30caba530758929fa02808943b22f8>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 6 0 R
+/Root 5 0 R
+/Size 14
+>>
+startxref
+2388
+%%EOF

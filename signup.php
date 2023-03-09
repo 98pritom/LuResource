@@ -1,57 +1,54 @@
+<?php include 'navBarIn.php' ?>
+
+
 <?php
-require('config.php');
 
+$email = "";
+$full_name = "";
+$errors = array();
 
-if(isset($_SESSION['isUserLoggedIn'])){
-    echo "<script>window.location.href='home.php ? user_already_loggedin';</script>";
-}
-
-if (isset($_POST['signup'])) {
-    // print_r($_POST);
-    $query = "SELECT * FROM `users` WHERE email_id = '{$_POST['emailId']}'";
-    $run = mysqli_query($conn, $query);
-    $data = mysqli_fetch_array($run);
-    // print_r($_FILES['image']);
-
-    if (count($data) > 0) {
-        echo "<script>window.location.href='signup.php ? user_already_exist'</script>";
-    } else {
-
-        $image = $_FILES['image'];
-        $imageName = $image['name'];
-        $image_location = $image['tmp_name'];
-        $imageDes = "storage/" . $imageName;
-
-        move_uploaded_file($image_location, $imageDes);
-
-        $password = crypt($_POST['password'],"LuResource");
-        $query = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`password`,`role`) VALUES ('{$_POST['fullName']}','{$_POST['emailId']}','{$_POST['department']}','$password','teacher')";
-        $run = mysqli_query($conn, $query);
-
-        if ($run) {
-            echo "<script>window.location.href='signin.php ? user_registered_successfully'</script>";
+//if user signup button
+if(isset($_POST['signup'])){
+    $full_name = mysqli_real_escape_string($conn, $_POST['fullName']);
+    $email = mysqli_real_escape_string($conn, $_POST['emailId']);
+    $department = mysqli_real_escape_string($conn, $_POST['department']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    $email_check = "SELECT * FROM users WHERE email_id = '$email'";
+    $res = mysqli_query($conn, $email_check);
+    if(mysqli_num_rows($res) > 0){
+        $errors['email'] = "Email that you have entered is already exist!";
+        // echo "<script>alert('Email that you have entered is already exist!!!')</script>";
+    }
+    if(count($errors) === 0){
+        $encpass = password_hash($password, PASSWORD_BCRYPT);
+        $code = rand(999999, 111111);
+        $status = "notverified";
+        $insert_data = "INSERT INTO `users`(`full_name`, `email_id`,`department`,`password`,`role`, `code`, `status`) VALUES ('$full_name','$email','$department','$password','student', '$code', '$status')";
+        $data_check = mysqli_query($conn, $insert_data);
+        if($data_check){
+            $subject = "Email Verification Code";
+            $message = "Your verification code is $code";
+            $sender = "From: luresource22@gmail.com";
+            if(mail($email, $subject, $message, $sender)){
+                $info = "We've sent a verification code to your email - $email";
+                $_SESSION['info'] = $info;
+                $_SESSION['email'] = $email;
+                $_SESSION['isUserLoggedIn'] = true;
+                $_SESSION['password'] = $password;
+                header('location: user-otp.php');
+                exit();
+            }else{
+                $errors['otp-error'] = "Failed while sending code!";
+            }
+        }else{
+            $errors['db-error'] = "Failed while inserting data into database!";
         }
     }
 }
+
 ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>SignUp</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style/signinUp.css">
-</head>
-
-<body>
-    <header>
-       <?php
-       include 'navBarOut.php';
-       ?>
-    </header>
+<link rel="stylesheet" href="style/signinUp.css">
     <main>
         <section>
             <div class="parent-div">
@@ -61,7 +58,7 @@ if (isset($_POST['signup'])) {
                 <div class="form-div">
                     <h1>Create Account</h1>
                     <p class="fw4">Fill in the details below to create an account</p>
-                    <form id="form" method="post" enctype="multipart/form-data">
+                    <form action="signup.php" id="form" method="POST" enctype="multipart/form-data">
                         <div class="mb-3 txt_field">
                             <input type="text" id="name" name="fullName" placeholder="Name">
                         </div>
@@ -85,7 +82,7 @@ if (isset($_POST['signup'])) {
                             <img src="" alt="">
                         </div> -->
                         <button type="submit" name="signup" class="btn-design">Sign Up</button><br>
-                        <p class="d-inline">Already have an account?</p><a class="change-color" href="signin.php"> Sign In</a>
+                        <p class="d-inline">Already have an account?</p><a href="signin.php"> Sign In</a>
                     </form>
                 </div>
             </div>
@@ -93,26 +90,8 @@ if (isset($_POST['signup'])) {
         <hr id="hr1">
     </main>
 
-    <footer>
-        <div class="container-fluid m-0 p-0 ">
-        <div class="d-flex foo">
-            <div >
-                <h4 class="fw5">Lu<span class="change-color">Resource</span></h4>
-                <p>Keep all your files safe with <br> powerful online cloud storage</p>
-            </div>
-             <div class="ms-5">
-                 <h5 class="mx-2">Navigate</h5>
-                 <div class="d-flex">
-                     <a href="#" class="mx-2">Home</a>
-                     <a href="#" class="mx-2">About us</a>
-                     <a href="#" class="mx-2">Resources</a>
-                 </div>
-             </div>
-             
-        </div>
-    </div>
-    </footer>
-
+      
+<?php include 'footer.php'; ?>
     <script>
         const firstName = document.getElementById("name");
         const email_id = document.getElementById("email");
@@ -156,7 +135,4 @@ if (isset($_POST['signup'])) {
         })
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-
-</html>
+    

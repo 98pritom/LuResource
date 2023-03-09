@@ -17,8 +17,13 @@
     --sec-text-color:#fff;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 a:hover{
-    color: var(--sec-text-color);
+    color: var(--sec-color);
 }
 #hr1{
     margin-top: 70px;
@@ -33,8 +38,8 @@ a:hover{
   }
   
   body {
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    /* margin: 0 auto; */
     background: var(--prim-color);
   }
   h1{
@@ -52,14 +57,22 @@ a:hover{
   }
 
   /* Navbar style */
-  .change-color{
+  /* .change-color{
     color: var(--sec-color);
     text-decoration: none;
   }
   .nav-design{
     border-radius: 5px;
-    margin-top: 2.5rem;
   }
+  .navbar{
+  background: #004643;
+  color: white !important;
+  border-bottom: 1px solid #124d4c;
+}
+
+.navbar a{
+  color: white !important;
+} */
   /* Navbar style */
 
   /* Login section */
@@ -70,6 +83,7 @@ a:hover{
   .img-design{
     width: 515px;
     border-radius: 10px;
+    margin-left: 15rem;
   }
   /* .img-div{
 
@@ -128,4 +142,29 @@ a:hover{
 }
 .foo a:hover {
 color: rgb(182, 179, 179);
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+  .parent-div{
+    display: block !important;
+  }
+
+  .img-design{
+    width: 100% !important;
+    margin: auto !important;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .form-div{
+    margin-top: 2rem;
+    margin-left: 0px;
+    width: 100%;
+    padding: 10px;
+  }
 }

@@ -1,0 +1,59 @@
+
+body {
+    max-width: 100%;
+    background-color: #e8e8e8;
+    /* margin: 0 auto; */
+   /*background: var(--prim-color); */
+  }
+  .jumbotron {
+    text-align: center;
+    width: 50rem;
+    border: 1px solid rgb(184, 178, 178);
+    margin: auto;
+    margin-top: 1rem;
+    padding-top: 2rem;
+}
+
+.jumbotron h1{
+    color: black;
+    font-weight: bold;
+}
+
+/* .jumbotron img{
+    width: 30rem;
+    height: 20rem;
+    object-fit: cover;
+    margin: auto;
+    border: 1px solid black;
+} */
+
+.jum
+{
+    width: 40rem;
+    margin: auto;
+    border: 1px solid #004643;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.add_notice
+{
+    color: black;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.submitbtn
+{
+    background: #004643;
+    color: white;
+}
+
+.noticeimage
+{
+    width: 30rem;
+    height: 15rem;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 2px solid gray;
+}

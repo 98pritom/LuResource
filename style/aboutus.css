@@ -17,6 +17,7 @@
    background-color: #004643; 
   /* background-color: aliceblue; */
   padding:20px;
+  color: #dee7e3;
  
 }
 :root{
@@ -36,8 +37,9 @@ a:hover{
   }
   
   body {
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    background-color: #e8e8e8;
+    /* margin: 0 auto; */
    /*background: var(--prim-color); */
   }
   h1{
@@ -61,9 +63,19 @@ a:hover{
   }
   .nav-design{
     border-radius: 5px;
-    margin-top: 1rem;
+
     margin-bottom: 2.5rem;
   }
+  .navbar
+{
+  background: #004643;
+  color: white !important;
+  border-bottom: 1px solid #124d4c;
+}
+
+.navbar a{
+  color: white !important;
+}
  
   /* Navbar style */
 
@@ -80,13 +92,15 @@ a:hover{
     width: 300px;
     height: 300px;
   } 
+  .card:hover {
+    background-color: #e4e2e2;
+  }
 
-
-
+/* card section */
 
 
 /* Footer section */
-.foo a{
+/* .foo a{
     text-decoration: none;
     color: rgb(223, 221, 221);
 }
@@ -99,4 +113,16 @@ a:hover{
 }
 .foo a:hover {
   color: rgb(182, 179, 179);
+} */
+
+/* Media queries */
+@media (max-width: 768px) {
+  .col-sm-12
+  {   
+      margin-bottom: 1rem !important;
+  }
 }
+/* Media queries */
+
+
+

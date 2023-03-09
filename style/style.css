@@ -13,7 +13,7 @@
 }
 .bg-top{
   background-color: #004643;
-  padding:40px;
+ 
 }
 :root{
     --prim-color: #004643;
@@ -32,8 +32,9 @@ a:hover{
   }
   
   body {
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    background-color: #e8e8e8;
+    /* margin: 0 auto; */
    /*background: var(--prim-color); */
   }
   h1{
@@ -51,14 +52,24 @@ a:hover{
   }
 
   /* Navbar style */
-  .change-color{
+  /* .change-color{
     color: var(--sec-color);
     text-decoration: none;
-  }
-  .nav-design{
+  } */
+  /* .nav-design{
     border-radius: 5px;
-    margin-top: 2.5rem;
-  }
+
+  } */
+  /* .navbar
+{
+  background: #004643;
+  color: white !important;
+
+}
+
+.navbar a{
+  color: white !important;
+} */
   /* Navbar style */
 
   .section-header{
@@ -89,12 +100,18 @@ a:hover{
     height:500px;
 }
 
-
+.section-header
+{
+  background: #034746;
+  color: white;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
 
 
 
 /* Footer section */
-.foo a{
+/* .foo a{
     text-decoration: none;
     color: rgb(223, 221, 221);
 }
@@ -107,4 +124,6 @@ a:hover{
 }
 .foo a:hover {
   color: rgb(182, 179, 179);
-}
+} */
+
+
