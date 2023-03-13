@@ -22,7 +22,7 @@ if (!isset($_SESSION['email'])) {
         <form action="resourceAction.php" method="POST" enctype="multipart/form-data">
 
                 <div class="mb-3">
-                    <label for="course_title" class="form-label">Course Title</label>
+                    <label for="course_title" class="form-label">Course Code</label>
                     <input type="text" class="form-control" name="course_title" id="course_title" required>
                 </div>
 

@@ -10,7 +10,7 @@ $datafetchqueryprofile = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '
 $dataprofile = mysqli_fetch_array($datafetchqueryprofile);
 
 // $new_role = $_POST['status'];
-$dataprofilerole= $dataprofile['role'];
+$dataprofilerole = $dataprofile['role'];
 $dataprofileid = $dataprofile['id'];
 ?>
 
@@ -29,10 +29,11 @@ $dataprofileid = $dataprofile['id'];
                     <option value='teacher'>Teacher</option>
                     <option value='student'>Student</option>
                 </select>
-                </div>
+                <button type='submit' class='btn btn-primary mt-4'>Update Role</button>
+                
 
 
-        <button type='submit' class='btn btn-primary'>Update Role</button>
+        
     </form>";
     ?>
 </div>

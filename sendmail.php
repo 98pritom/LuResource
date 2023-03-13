@@ -12,7 +12,7 @@ $data = mysqli_fetch_array($run);
 
 
 $email = $data['email_id'];
-$subject = $_POST['subject'];
+$subjectMail = $_POST['subject'];
 $message = $_POST['message'];
 $emailme = $_POST['emailme'];
 $id = $_POST['id'];
@@ -22,7 +22,7 @@ echo $email;
 
 echo $emailme;
 $to = $emailme;
-$subject = "Message";
+$subject = $subjectMail;
 $message = $message;
 $headers = "From: $email";
 mail($to, $subject, $message, $headers);

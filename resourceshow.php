@@ -58,7 +58,8 @@ if($data['video'] != "")
         <p id='myexample' hidden>$datavideo</p>
     
         <div class='w-100  m-auto mb-5'>
-            <img src='$dataimge' alt='' class='imgview img-thumbnail border'>
+            <img src='$dataimge' alt='' class='imgview img-thumbnail border'><br>
+            <a href='$dataimge' id='myimg'></a>
         </div>
 
         <div>
@@ -93,9 +94,22 @@ if($data['video'] != "")
   if(textvideo == 'video/')
   {
     var word = 'video/';
-    var newText = text.replace(word, "");
+    var newText = textvideo.replace(word, "");
     document.getElementById("videoexample").style.display = "none";
   } 
+
+  // var textImage = document.getElementById("myimg").innerHTML;
+  // if(text == 'resourseImage/')
+  // {
+  //   var word = 'resourseImage/';
+  //   var newText = textImage.replace(word, "");
+  //   document.getElementById("myimg").innerHTML = newText;
+
+  // } else{
+  //   document.getElementById("myimg").style.backgroundColor = "#004643";
+  //   document.getElementById("myimg").style.color = "white";
+  //   document.getElementById("myimg").innerHTML = "Download Image";
+  // }
   
 </script>
 

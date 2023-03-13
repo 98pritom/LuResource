@@ -1,9 +1,10 @@
 <?php include 'navBarIn.php'; ?>
 
+<link rel="stylesheet" href="style/notice.css">
 
-
-  <h1 class="text-center">Update Profile</h1>
+  <h1 class="text-center add_notice">Update Profile</h1>
   <div class="container">
+    <div class="jum">
     <form action='updateAction.php' class="form-design mx-auto" method="POST" id="form" enctype="multipart/form-data">
 
       <div class="row mb-3">
@@ -67,10 +68,10 @@
 
         form.addEventListener("submit", (e) => {
 
-            if (!/^[a-zA-Z .]+$/.test(designation.value)) {
-                alert("Designation can not contain number");
-                e.preventDefault();
-            }
+            // if (!/^[a-zA-Z .]+$/.test(designation.value)) {
+            //     alert("Designation can not contain number");
+            //     e.preventDefault();
+            // }
 
             if (!/^(\+88-|\+88)?01[3-9]\d{8}$/.test(number.value)) { /// +88
                 alert("Must be a Bangladeshi number");

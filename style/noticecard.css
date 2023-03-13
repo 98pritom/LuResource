@@ -1,4 +1,4 @@
-.flexbox {
+/* .flexbox {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -30,9 +30,9 @@
     font-weight: 500;
     font-size: 20px;
     position: relative;
-  }
+  } */
   
-  .flexcardTitle {
+  /* .flexcardTitle {
     font-family: 'Jost', sans-serif;
     text-transform: uppercase;
     font-size: 26px;
@@ -54,12 +54,13 @@
     top: 0px;
     border-radius: 50px 0px 0px 50px;
     z-index: -1;
-  /* background: #95B7A2; *//* background: -webkit-linear-gradient(bottom, #95B7A2, #AED2BC); */
+  background: #95B7A2;
+  background: -webkit-linear-gradient(bottom, #95B7A2, #AED2BC);
     background: -moz-linear-gradient(bottom, #95B7A2, #AED2BC);
-  /* background: linear-gradient(to top, #95B7A2, #AED2BC); */;
-  }
+  background: linear-gradient(to top, #95B7A2, #AED2BC);;
+  } */
   
-  .flexcardNumber:after {
+  /* .flexcardNumber:after {
     content: '';
     width: 25px;
     height: 40px;
@@ -79,11 +80,11 @@
   
   img.flexcardimgItem {
     width: 50%;
-  }
+  } */
   
   /* GREEN CARD */
   
-  .flexcardGreen {
+  /* .flexcardGreen {
     background: #f9fbfa;
     box-shadow: 4px 4px 4px #AED2BC;
   }
@@ -102,11 +103,11 @@
   
   .flexcardNumberGreen:after {
     background: #95b7a2;
-  }
+  } */
   
   /* BLUE CARD */
   
-  .flexcardBlue {
+  /* .flexcardBlue {
     background: #f7ffff;
    box-shadow: 4px 8px 1px #92E8EB;
   }
@@ -125,11 +126,11 @@
   
   .flexcardNumberBlue:after {
     background: #71bdbf;
-  }
+  } */
   
   /* ORANGE CARD */
   
-  .flexcardOrange {
+  /* .flexcardOrange {
     background: #fdf8f3;
    box-shadow: 4px -2px 1px #F68404;
   }
@@ -148,11 +149,11 @@
   
   .flexcardNumberOrange:after {
     background: #d06f02;
-  }
+  } */
   
   /* PİNK CARD */
   
-  .flexcardPink {
+  /* .flexcardPink {
     background: #fffafd;
     position: relative;
       box-shadow: 2px 2px 1px #F34EAE ;
@@ -162,7 +163,7 @@
       content: '';
       width: 0px;
       height: 50px;
-      /* background: red; */
+      background: red;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -183,11 +184,11 @@
   
   .flexcardNumberPink:after {
     background: #d24095;
-  }
+  } */
   
   /* RESPONSİVE */
   
-  @media only screen and (max-width: 900px) {
+  /* @media only screen and (max-width: 900px) {
   
     .flexcard {
       width: 100%;
@@ -207,8 +208,8 @@
     }
   
   
-  }
-  footer {
+  } */
+  /* footer {
       display: flex;
       width: 100%;
       justify-content: center;
@@ -223,4 +224,4 @@
     text-decoration: none;
     color: black;
     text-align: center;
-  }
+  } */

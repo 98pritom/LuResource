@@ -1,9 +1,9 @@
-<?php 
+<?php
 include 'navbarIn.php';
 
 $email = $_SESSION['email'];
-if($email == false){
-  header('Location: signin.php');
+if ($email == false) {
+    header('Location: signin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ if($email == false){
 
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Code Verification</title>
@@ -20,15 +21,15 @@ if($email == false){
 </head>
 
 
-<?php 
+<?php
+// $errors = array();
 
-
-if(isset($_POST['check'])){
+if (isset($_POST['check'])) {
     $_SESSION['info'] = "";
     $otp_code = mysqli_real_escape_string($conn, $_POST['otp']);
     $check_code = "SELECT * FROM users WHERE code = $otp_code";
     $code_res = mysqli_query($conn, $check_code);
-    if(mysqli_num_rows($code_res) > 0){
+    if (mysqli_num_rows($code_res) > 0) {
         $fetch_data = mysqli_fetch_assoc($code_res);
         $fetch_code = $fetch_data['code'];
         $email = $fetch_data['email_id'];
@@ -36,15 +37,19 @@ if(isset($_POST['check'])){
         $status = 'verified';
         $update_otp = "UPDATE users SET code = $code, status = '$status' WHERE code = $fetch_code";
         $update_res = mysqli_query($conn, $update_otp);
-        if($update_res){
+        if ($update_res) {
             $_SESSION['email'] = $email;
-            header('location: signin.php');
+            header('location: index.php');
             exit();
-        }else{
-            $errors['otp-error'] = "Failed while updating code!";
+        } else {
+            // $errors['otp-error'] = "Failed while updating code!";
+            echo "<script>alert('Failed while updating code!!')</script>";
+            echo "<script>location.href='user-otp.php'</script>";
         }
-    }else{
-        $errors['otp-error'] = "You've entered incorrect code!";
+    } else {
+        // $errors['otp-error'] = "Failed while updating code!";
+        echo "<script>alert('Incorrect otp code!!')</script>";
+        echo "<script>location.href='user-otp.php'</script>";
     }
 }
 
@@ -58,16 +63,17 @@ if(isset($_POST['check'])){
             <div class="col-md-4 offset-md-4 form">
                 <form action="user-otp.php" method="POST" autocomplete="off">
                     <h2 class="text-center">Code Verification</h2>
-                    <?php 
-                    if(isset($_SESSION['info'])){
-                        ?>
+                    
+                    <?php
+                    if (isset($_SESSION['info'])) {
+                    ?>
                         <div class="alert alert-success text-center">
                             <?php echo $_SESSION['info']; ?>
                         </div>
-                        <?php
+                    <?php
                     }
                     ?>
-                    
+
                     <div class="form-group">
                         <input class="form-control" type="number" name="otp" placeholder="Enter verification code" required>
                     </div>
@@ -78,15 +84,7 @@ if(isset($_POST['check'])){
             </div>
         </div>
     </div>
-    <div class="animation-area">
-        <ul class="box-area">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+
 </body>
+
 </html>

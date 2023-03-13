@@ -36,7 +36,7 @@ a:hover{
    /*background: var(--prim-color); */
   }
   h1{
-    font-size: 3.438;
+    font-size: 3.438rem;
     color: var(--sec-text-color);
   }
   .fw4 {

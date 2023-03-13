@@ -7,7 +7,7 @@ if (!isset($_SESSION['email'])) {
   echo "<script>alert('Please signin to enter this page');</script>";
   echo "<script>window.location.href='signin.php ? user_not_loggedin';</script>";
 }
-$course_title = $_GET['course_title'];
+
 ?>
 
 <!-- <style>
@@ -62,9 +62,10 @@ $course_title = $_GET['course_title'];
 
           <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="resource.php">All Resource</a></li>
+
           <?php
         
-          $alldata = mysqli_query($conn, "SELECT * FROM `resource` ORDER BY id DESC");
+          $alldata = mysqli_query($conn, "SELECT DISTINCT `course_title` FROM `resource` ORDER BY id DESC");
 
           while ($row = mysqli_fetch_array($alldata)) {
             echo "<li><a class='dropdown-item' href='courseresourceshow.php?course_title=$row[course_title]'>$row[course_title]</a></li>";
@@ -102,20 +103,20 @@ $course_title = $_GET['course_title'];
       <div class="row">
 
       <?php
-        
+        $course_title = $_GET['course_title'];
         $alldata = mysqli_query($conn, "SELECT * FROM `resource` WHERE course_title = '$course_title'");
 
         while ($row = mysqli_fetch_array($alldata)) {
+          $date_new = date('F j, Y, g:i a', strtotime($row['date_time']));
         echo "<div class='col-lg-4 col-md-3 col-sm-6 allshow'>
         <a href='resourceshow.php?id=$row[id]' class='resource'>
           <div class='card card-block'>
-            <img src='images/cloudcomp-2.png' alt=''>
             <h3 class='card-title m-1'>$row[topic]</h3>
            
             <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
             <div class='teachupload ms-1 mt-5'>
               <h6>Uploaded By <span class='fw-bolder'>$row[teacher_name]</span></h6>
-              <p class='date'>$row[date_time]</p>
+              <p class='date'>$date_new</p>
             </div>
             
           </div>

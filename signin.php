@@ -61,7 +61,7 @@ if (isset($_POST['signin'])) {
 
         form.addEventListener("submit", (e) => {
 
-            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/ || /^[a-zA-Z0-9._%+-]+_cse@lus\.ac\.bd$/.test(email_id.value)){
                 alert("Must be leading university edu mail");
                 e.preventDefault();
             }

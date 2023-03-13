@@ -4,7 +4,6 @@ include 'config.php';
 
 $id = $_GET['id'];
 
-echo $id;
 
 $deletequery = "DELETE FROM `notice` WHERE id='$id'";
 

@@ -1,10 +1,14 @@
 .footer
 {
     background: #004643;
-    margin-top: 15rem !important;
+    margin-top: 25rem !important;
     padding-top: 2rem;
     padding-bottom: 1rem;
     color: white !important;
+}
+
+.lu-color{
+    color: #FF8036;
 }
 
 .footer p{

@@ -3,9 +3,9 @@
 
 <?php
 
-$email = "";
-$full_name = "";
-$errors = array();
+// $email = "";
+// $full_name = "";
+// $errors = array();
 
 //if user signup button
 if(isset($_POST['signup'])){
@@ -17,10 +17,12 @@ if(isset($_POST['signup'])){
     $email_check = "SELECT * FROM users WHERE email_id = '$email'";
     $res = mysqli_query($conn, $email_check);
     if(mysqli_num_rows($res) > 0){
-        $errors['email'] = "Email that you have entered is already exist!";
-        // echo "<script>alert('Email that you have entered is already exist!!!')</script>";
+        // $errors['email'] = "Email that you have entered is already exist!";
+        echo "<script>alert('Email that you have entered is already exist!!!')</script>";
+        echo "<script>location.href='signup.php'</script>";
+        
     }
-    if(count($errors) === 0){
+    else{
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
@@ -34,15 +36,17 @@ if(isset($_POST['signup'])){
                 $info = "We've sent a verification code to your email - $email";
                 $_SESSION['info'] = $info;
                 $_SESSION['email'] = $email;
-                $_SESSION['isUserLoggedIn'] = true;
-                $_SESSION['password'] = $password;
                 header('location: user-otp.php');
                 exit();
             }else{
-                $errors['otp-error'] = "Failed while sending code!";
+                // $errors['otp-error'] = "Failed while sending code!";
+                echo "<script>alert('Failed while sending code!!!!')</script>";
+                echo "<script>location.href='signup.php'</script>";
             }
         }else{
-            $errors['db-error'] = "Failed while inserting data into database!";
+            // $errors['db-error'] = "Failed while inserting data into database!";
+            echo "<script>alert('Failed while inserting data into database!!!!')</script>";
+            echo "<script>location.href='signup.php'</script>";
         }
     }
 }
@@ -108,7 +112,7 @@ if(isset($_POST['signup'])){
                 e.preventDefault();
             }
 
-            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/.test(email_id.value)){
+            if(!/^(cse|eee|law)_\d{10}@lus.ac.bd$/ || /^[a-zA-Z0-9._%+-]+_cse@lus\.ac\.bd$/.test(email_id.value)){
                 alert("Must be leading university edu mail");
                 e.preventDefault();
             }

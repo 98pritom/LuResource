@@ -102,7 +102,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@
             </div>
             <div class='col-lg-6'>
                 <h3>Contact Information</h3>
-                <p><strong>Cell Phone: </strong>0$cell_phone</p>
+                <p><strong>Cell Phone: </strong>$cell_phone</p>
                 <p><strong><a type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Email Me</a></p>
                 
             </div>
@@ -159,7 +159,6 @@
         <div class='col-lg-4 col-md-3 col-sm-6 allshow'>
         <a href='resourceshow.php?id=$row[id]' class='resource'>
           <div class='card card-block'>
-            <img src='images/cloudcomp-2.png' alt=''>
             <h3 class='card-title m-1'>$row[topic]</h3>
             <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
             

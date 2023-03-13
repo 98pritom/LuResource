@@ -16,6 +16,7 @@
         $dataFetchQuery = "SELECT * FROM `users` WHERE email_id = '$email'";
         $run = mysqli_query($conn, $dataFetchQuery);
         $data = mysqli_fetch_array($run);
+        $data_status = $data['status'];
         echo "";
     }
     
@@ -27,7 +28,7 @@
 
     <nav class='navbar navbar-expand-lg navbar-light'>
             <div class='container-fluid'>
-                <a class='navbar-brand fw6' href='#'>Lu<span class='change-color'>Resource</span></a>
+                <a class='navbar-brand fw6' href='#'>LU<span class='change-color'>Resource</span></a>
                 <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                     <span class='navbar-toggler-icon'></span>
                 </button>
@@ -36,11 +37,8 @@
                         <li class='nav-item'>
                             <a class='nav-link fw6' aria-current='page' href='index.php'>Home</a>
                         </li>
-                        <li class='nav-item'>
-                            <a class='nav-link fw6' href='aboutus.php'>About Us</a>
-                        </li>
                         <?php 
-                        if(isset($_SESSION['email']))
+                        if(isset($_SESSION['email']) && $data_status == 'verified')
                         {
                             echo "<li class='nav-item'>
                             <a class='nav-link fw6' href='resource.php'>Resources</a>
@@ -50,7 +48,7 @@
                         ?>  
                         
                         <?php 
-                        if(isset($_SESSION['email']))
+                        if(isset($_SESSION['email']) && $data_status == 'verified')
                         if($data['email_id'] == 'cse_1912020117@lus.ac.bd')
                         {
                             {
@@ -75,10 +73,13 @@
                         <li class='nav-item'>
                             <a class='nav-link fw6' href='notice.php'>Notice</a>
                         </li>
+                        <li class='nav-item'>
+                            <a class='nav-link fw6' href='aboutus.php'>About Us</a>
+                        </li>
                     </ul>
                     
                     <?php 
-                    if(isset($_SESSION['email']))
+                    if(isset($_SESSION['email']) && $data_status == 'verified')
                     {
                         echo "<div class='d-flex ms-5'>
                       <a href='profile.php'><img src='$data[image]' class='rounded-circle  navimg' width='40px' alt='Profile'></a>

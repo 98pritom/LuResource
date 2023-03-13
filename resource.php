@@ -10,14 +10,6 @@ if (!isset($_SESSION['email'])) {
 
 ?>
 
-<!-- <style>
-  .fa-heart
-  {
-      margin-left: 5px;
-      color:red;
-  }
-</style> -->
-
 <link rel="stylesheet" href="style/resource.css">
 <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/73728a3c01.css" crossorigin="anonymous"> -->
   <main>
@@ -33,7 +25,7 @@ if (!isset($_SESSION['email'])) {
           <li><a class="dropdown-item" href="resource.php">All Resource</a></li>
           <?php
         
-          $alldata = mysqli_query($conn, "SELECT * FROM `resource` ORDER BY id DESC");
+          $alldata = mysqli_query($conn, "SELECT DISTINCT `course_title` FROM `resource` ORDER BY id DESC");
 
           while ($row = mysqli_fetch_array($alldata)) {
             echo "<li><a class='dropdown-item' href='courseresourceshow.php?course_title=$row[course_title]'>$row[course_title]</a></li>";
@@ -81,9 +73,9 @@ if (!isset($_SESSION['email'])) {
           echo "<div class='col-lg-4'>
             <a href='resourceshow.php?id=$row[id]' class='resource'>
               <div class='card card-block'>
-                <img src='images/cloudcomp-2.png' alt=''>
                 <h3 class='card-title m-1'>$row[topic]</h3>
                 <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
+                <h6 class='card-text m-1'>$row[description]</h6>
                 <div class='teachupload ms-1 mt-5'>
                   <h6>Uploaded By <span class='fw-bolder'>$row[teacher_name]</span></h6>
                   <p class='date'>$date_new</p>

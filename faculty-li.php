@@ -5,7 +5,7 @@
 
   
   .card{
-    margin-bottom: 20rem !important;
+    margin-bottom: 12rem !important;
   }
 
 
@@ -44,7 +44,7 @@ if(!isset($_SESSION['email']))
                 <p>$row[email_id]</p>
                 </div>
                 <div class='btn-wrapper'>
-                <a href='faculty-li-details.php?id=$row[id]' class='btn btn-info' >View</a>
+                <a href='faculty-li-details.php?id=$row[id]' class='btn btn-success' >View</a>
                 </div>
               </div>
             </div>";
@@ -60,10 +60,7 @@ if(!isset($_SESSION['email']))
     </div>
   </div>
 
-  
 
-
-<script src="js/nav.js"></script>
 
    
 <?php include 'footer.php'; ?>

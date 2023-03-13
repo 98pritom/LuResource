@@ -1,9 +1,13 @@
 <?php include 'navBarIn.php'; ?>
 
 
+
 <?php
 
-
+if (!isset($_SESSION['email'])) {
+    echo "<script>alert('Please signin to enter this page');</script>";
+    echo "<script>window.location.href='signin.php ? user_not_loggedin';</script>";
+  }
 
 
 // $user_data = "SELECT * FROM `users` WHERE email_id = '{$_SESSION['emailId']}'";
@@ -13,6 +17,7 @@
 ?>
 <link rel="stylesheet" href="style/resource.css">
 <link rel="stylesheet" href="style/profile.css">
+<link rel="stylesheet" href="style/footer.css">
 <!-- <style>
     .proimage
     {
@@ -119,7 +124,7 @@
                         </div>
                     </div>
                     <div class='col-md-2 float-end button'>
-                    <a href='updateProfile.php'><button type='submit' class='btn btn-info mb-2 pe-4 ps-4'>Edit</button></a>
+                    <a href='updateProfile.php'><button type='submit' class='btn btn-success mb-2 pe-4 ps-4'>Edit</button></a>
                     <a href='signout.php'><button type='submit' class='btn btn-danger pe-4 ps-4'>Signout</button></a>
                     </div>
                 </div>";
@@ -159,11 +164,10 @@
         <div class='col-lg-4 col-md-3 col-sm-6 allshow'>
         <a href='resourceshow.php?id=$row[id]' class='resource'>
           <div class='card card-block'>
-            <img src='images/cloudcomp-2.png' alt=''>
             <h3 class='card-title m-1'>$row[topic]</h3>
             <h6 class='card-text m-1'>Course Code: $row[course_title]</h6>
             <div class='d-felx mt-3'>
-                    <a href='editresource.php?id=$row[id]' class='btn btn-info'>Edit</a>
+                    <a href='editresource.php?id=$row[id]' class='btn btn-success'>Edit</a>
                     <a href='deleteresource.php?id=$row[id]' class='btn btn-danger'>Delete</a>
                 </div>
           </div>
